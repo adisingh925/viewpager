@@ -92,42 +92,4 @@
         tools:listitem="@layout/cardview"/>
 
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <ImageView
-            android:id="@+id/middot"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/dot"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="150dp"
-            app:tint="@color/black" />
-
-        <ImageView
-            android:id="@+id/leftdot"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/dot"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="150dp"
-            android:layout_marginRight="15dp"
-            android:layout_toLeftOf="@id/middot"
-            app:tint="@color/black" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/dot"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="150dp"
-            android:layout_toRightOf="@id/middot"
-            android:layout_marginLeft="15dp"
-            app:tint="@color/black" />
-
-    </RelativeLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

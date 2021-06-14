@@ -1,9 +1,11 @@
 package com.example.viewpager
 
+import android.graphics.Color
 import android.media.Image
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
+import androidx.annotation.ColorRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager.HORIZONTAL
@@ -35,10 +37,13 @@ class MainActivity : AppCompatActivity() {
 
         val img12 = findViewById<ImageView>(R.id.img12)
 
-        val url = "https://firebasestorage.googleapis.com/v0/b/viewpager-4b2b6.appspot.com/o/images%2Fbackground.png?alt=media&token=73f0695b-9278-4d9f-b5b2-6a4cfb5c38ad"
+        val url = "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2Fyc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80"
 
-        Picasso.with(this).load(url).into(
-            img12)
+        Glide
+            .with(this)
+            .load(url)
+            .circleCrop()
+            .into(img12)
 
         songobjects.add(dataclass("aditya",img12))
         songobjects.add(dataclass("yuvraj",img12))
@@ -55,5 +60,6 @@ class MainActivity : AppCompatActivity() {
             rcv.setVisibility(View.VISIBLE)
             (rcv.layoutManager as LinearLayoutManager).scrollToPosition(0)
         }
+
     }
 }

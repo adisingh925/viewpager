@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background">
+        android:background="@drawable/image">
 
         <Button
             android:id="@+id/button"
@@ -43,5 +43,45 @@
             android:layout_marginTop="300dp"
             android:textSize="30dp"/>
     </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/middot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dot"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="40dp"
+            android:layout_toRightOf ="@id/leftdot"
+            android:layout_marginBottom="15dp"
+            app:tint="@color/black" />
+
+        <ImageView
+            android:id="@+id/leftdot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dot"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="15dp"
+            app:tint="@color/black" />
+
+        <ImageView
+            android:id="@+id/rightdot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dot"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="70dp"
+            android:layout_toRightOf ="@id/middot"
+            android:layout_marginBottom="15dp"
+            app:tint="@color/black" />
+    </RelativeLayout>
+
 
 </androidx.cardview.widget.CardView>
