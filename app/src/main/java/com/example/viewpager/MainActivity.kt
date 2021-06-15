@@ -1,11 +1,9 @@
 package com.example.viewpager
 
-import android.graphics.Color
-import android.media.Image
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import android.widget.ImageView
-import androidx.annotation.ColorRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager.HORIZONTAL
@@ -14,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SnapHelper
 import com.bumptech.glide.Glide
 import com.google.firebase.storage.FirebaseStorage
-import com.squareup.picasso.Picasso
 
 lateinit var rcv:RecyclerView
 
@@ -45,9 +42,11 @@ class MainActivity : AppCompatActivity() {
             .circleCrop()
             .into(img12)
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////
         songobjects.add(dataclass("aditya",img12))
         songobjects.add(dataclass("yuvraj",img12))
         songobjects.add(dataclass("rudra",img12))
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
         val snapHelper: SnapHelper = LinearSnapHelper()
         snapHelper.attachToRecyclerView(rcv)
@@ -55,11 +54,44 @@ class MainActivity : AppCompatActivity() {
         rcv.adapter = rcv1
         rcv.layoutManager = LinearLayoutManager(this,HORIZONTAL,false)
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////
         imageview.setOnClickListener()
         {
             rcv.setVisibility(View.VISIBLE)
             (rcv.layoutManager as LinearLayoutManager).scrollToPosition(0)
-        }
 
+            val speedScroll = 2000
+            val handler: Handler = Handler()
+
+            val runnable: Runnable = object : Runnable {
+                var count = 0
+                override fun run() {
+                    if (count < 3) {
+                        rcv.scrollToPosition(count++)
+                        handler.postDelayed(this, speedScroll.toLong())
+                    }
+                }
+            }
+            handler.postDelayed(runnable, speedScroll.toLong())
+        }
+        ////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////////
+        val speedScroll = 2000
+        val handler: Handler = Handler()
+
+        val runnable: Runnable = object : Runnable {
+            var count = 0
+            override fun run() {
+                if (count < 3) {
+                    rcv.scrollToPosition(count++)
+                    handler.postDelayed(this, speedScroll.toLong())
+                }
+            }
+        }
+        handler.postDelayed(runnable, speedScroll.toLong())
+        ////////////////////////////////////////////////////////////////////////////////////////////
     }
 }
