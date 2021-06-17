@@ -17,8 +17,8 @@ lateinit var rcv:RecyclerView
 
 class MainActivity : AppCompatActivity() {
 
-    val songobjects = mutableListOf<dataclass>()
-    val rcv1 = myadapter(songobjects)
+    val objects = mutableListOf<dataclass>()
+    val rcv1 = myadapter(objects)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,9 +43,9 @@ class MainActivity : AppCompatActivity() {
             .into(img12)
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-        songobjects.add(dataclass("aditya",img12))
-        songobjects.add(dataclass("yuvraj",img12))
-        songobjects.add(dataclass("rudra",img12))
+        objects.add(dataclass("aditya",img12))
+        objects.add(dataclass("yuvraj",img12))
+        objects.add(dataclass("rudra",img12))
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
         val snapHelper: SnapHelper = LinearSnapHelper()

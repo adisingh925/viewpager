@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 
-class myadapter(val songs: List<dataclass>): RecyclerView.Adapter<myadapter.myviewholder>() {
+class myadapter(val objects: List<dataclass>): RecyclerView.Adapter<myadapter.myviewholder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): myviewholder {
         val inflator = LayoutInflater.from(parent.context)
 
@@ -18,8 +18,8 @@ class myadapter(val songs: List<dataclass>): RecyclerView.Adapter<myadapter.myvi
     }
 
     override fun onBindViewHolder(holder: myviewholder, position: Int) {
-        holder.textview1.text = songs[position].string1
-       // Glide.with(holder.image1.context).load("https://firebasestorage.googleapis.com/v0/b/viewpager-4b2b6.appspot.com/o/images%2Fbackground.png?alt=media&token=73f0695b-9278-4d9f-b5b2-6a4cfb5c38ad").into(holder.image1)
+        holder.textview1.text = objects[position].string1
+
         holder.button.setVisibility(View.GONE)
 
         if(position == 0)
@@ -51,7 +51,7 @@ class myadapter(val songs: List<dataclass>): RecyclerView.Adapter<myadapter.myvi
     }
 
     override fun getItemCount(): Int {
-        return songs.size
+        return objects.size
     }
 
 
