@@ -1,6 +1,7 @@
 package com.example.viewpager
 
 import android.graphics.Color
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -40,10 +41,6 @@ class myadapter(val songs: List<dataclass>): RecyclerView.Adapter<myadapter.myvi
             holder.middot.setColorFilter(Color.BLACK)
             holder.rightdot.setColorFilter(Color.YELLOW)
             holder.leftdot.setColorFilter(Color.BLACK)
-        }
-
-        if(position == 2) {
-
             holder.button.setVisibility(View.VISIBLE)
 
             holder.button.setOnClickListener()
@@ -51,7 +48,6 @@ class myadapter(val songs: List<dataclass>): RecyclerView.Adapter<myadapter.myvi
                 rcv.setVisibility(View.GONE)
             }
         }
-
     }
 
     override fun getItemCount(): Int {

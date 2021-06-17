@@ -60,14 +60,14 @@ class MainActivity : AppCompatActivity() {
             rcv.setVisibility(View.VISIBLE)
             (rcv.layoutManager as LinearLayoutManager).scrollToPosition(0)
 
-            val speedScroll = 2000
+            val speedScroll = 3000
             val handler: Handler = Handler()
 
             val runnable: Runnable = object : Runnable {
                 var count = 0
                 override fun run() {
                     if (count < 3) {
-                        rcv.scrollToPosition(count++)
+                        rcv.smoothScrollToPosition(count++)
                         handler.postDelayed(this, speedScroll.toLong())
                     }
                 }
@@ -78,15 +78,15 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        ///////////////////////////////////////////////////////////////////////////////////////////
-        val speedScroll = 2000
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        val speedScroll = 3000
         val handler: Handler = Handler()
 
         val runnable: Runnable = object : Runnable {
             var count = 0
             override fun run() {
                 if (count < 3) {
-                    rcv.scrollToPosition(count++)
+                    rcv.smoothScrollToPosition(count++)
                     handler.postDelayed(this, speedScroll.toLong())
                 }
             }
